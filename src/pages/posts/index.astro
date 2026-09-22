@@ -27,78 +27,28 @@ const title = "医学相关文章";
     <article class="ucla-card ucla-card__story">
       {
         posts.map((post: any) => (
-          <div class="ucla-card__body">
-            <p class="ucla-card__date">{post.frontmatter.pubDate}</p>
-            <h3 class="ucla-card__title">
-              <a
-                class="ucla-card__title-link"
-                href={post.url}
-                title={post.frontmatter.title}
-              >
-                {post.frontmatter.title}
-              </a>
-            </h3>
-            <p class="ucla-card__author">By {post.frontmatter.author}</p>
-            <p class="ucla-card__description">{post.frontmatter.description}</p>
+          <div class="nhsuk-card">
+            <div class="nhsuk-card__content">
+              <h3 class="nhsuk-card__heading nhsuk-heading-m">
+                <a
+                  class="nhsuk-card__link"
+                  href={post.url}
+                  title={post.frontmatter.title}
+                >
+                  {post.frontmatter.title}
+                </a>
+              </h3>
+              <p class="nhsuk-card__description">
+                By {post.frontmatter.author}
+              </p>
+              <p class="nhsuk-card__description">
+                {post.frontmatter.description}
+              </p>
+              <p class="nhsuk-card__description">{post.frontmatter.pubDate}</p>
+            </div>
           </div>
         ))
       }
     </article>
-
-    <!-- {
-      totalPages > 1 && (
-        <nav class="ucla-pagination" aria-label="分页">
-          <ul class="ucla-pagination--list">
-            <li class="ucla-pagination--list-item" aria-current="page">
-              <a
-                class="ucla-pagination--page ucla-pagination--page--current"
-                href="/posts/page/1/"
-                aria-label="第 1 页"
-              >
-                1
-              </a>
-            </li>
-
-            <li class="ucla-pagination--list-item">
-              <a
-                class="ucla-pagination--page"
-                href="/posts/page/2/"
-                aria-label="第 2 页"
-              >
-                2
-              </a>
-            </li>
-
-            {totalPages > 2 && (
-              <li class="ucla-pagination--list-item">
-                <a class="ucla-pagination--page">...</a>
-              </li>
-            )}
-
-            {totalPages > 2 && (
-              <li class="ucla-pagination--list-item">
-                <a
-                  class="ucla-pagination--page"
-                  href={`/posts/page/${totalPages}/`}
-                  aria-label={`第 ${totalPages} 页`}
-                >
-                  {totalPages}
-                </a>
-              </li>
-            )}
-
-            <li class="ucla-pagination--list-item">
-              <a
-                class="ucla-pagination--page"
-                href="/posts/page/2/"
-                aria-label="下一页"
-              >
-                下一页
-              </a>
-            </li>
-          </ul>
-        </nav>
-      )
-    } -->
   </div>
 </Layout>

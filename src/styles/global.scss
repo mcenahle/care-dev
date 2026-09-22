@@ -16,7 +16,7 @@ footer {
 }
 
 .container {
-  width: 1200px !important;
+  width: 1000px !important;
   max-width: 100% !important;
   margin: 20px auto 80px auto !important;
   padding-inline: 1.5rem;
@@ -235,4 +235,16 @@ a:hover,
   justify-content: center;
   align-items: center;
   margin: 4px auto;
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-body,
+  .nhsuk-body-m,
+  p {
+    margin-bottom: 10px;
+  }
+}
+
+.nhsuk-card__link {
+  color: #005eb8 !important;
 }
