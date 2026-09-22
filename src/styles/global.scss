@@ -65,12 +65,6 @@ u {
   text-decoration: underline;
 }
 
-@media (max-width: 959px) {
-  .ucla-main-nav {
-    box-shadow: 0 5px 10px rgb(0 0 0 / 33%);
-  }
-}
-
 .posts {
   text-indent: 2em;
 
@@ -149,22 +143,6 @@ blockquote {
   }
 }
 
-.ucla-dept-footer__nav a:not([class]),
-.ucla-dept-footer a:not([class]),
-.ucla-dept-footer__nav a:not([class]):focus,
-.ucla-dept-footer a:not([class]):focus,
-.ucla-dept-footer__nav a:not([class]):visited,
-.ucla-dept-footer a:not([class]):visited {
-  color: white !important;
-}
-
-.ucla-dept-footer__nav a:not([class]):hover,
-.ucla-dept-footer a:not([class]):hover,
-.ucla-dept-footer__nav a:not([class]):active,
-.ucla-dept-footer a:not([class]):active {
-  color: black !important;
-}
-
 .external-link::after {
   content: "";
   display: inline-block;
@@ -179,18 +157,6 @@ blockquote {
 
   -webkit-mask: url("/images/open-in-new.svg") center / contain no-repeat;
   mask: url("/images/open-in-new.svg") center / contain no-repeat;
-}
-
-.ucla-breadcrumb__list-item:last-child {
-  min-width: 0;
-}
-
-.ucla-breadcrumb__list-item:last-child a {
-  display: block;
-  min-width: 0;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 }
 
 b {
@@ -225,4 +191,20 @@ li + li {
 
 i {
   font-style: italic;
+}
+
+.nhsuk-header__logo {
+  min-width: 0rem;
+}
+
+a:hover,
+.nhsuk-footer__heading .nhsuk-link,
+.nhsuk-footer__heading .nhsuk-link:hover,
+.nhsuk-footer__heading .nhsuk-link:focus,
+.nhsuk-footer__heading .nhsuk-link:visited,
+.nhsuk-footer__list-item-link,
+.nhsuk-footer__list-item-link:hover,
+.nhsuk-footer__list-item-link:focus,
+.nhsuk-footer__list-item-link:visited {
+  color: #005eb8 !important;
 }
