@@ -210,9 +210,16 @@ a:hover,
 }
 
 .nhsuk-header__navigation-link:hover {
-  color: white !important;
+  color: #5da9e0 !important;
 }
 
 .nhsuk-header__menu-list .nhsuk-header__navigation-link:hover {
   color: #004b93 !important;
+}
+
+.nhsuk-header__service-logo:hover {
+  color: white !important;
+  // text-decoration: none !important;
+  // text-decoration-color: transparent !important;
+  // text-decoration-style: none !important;
 }
