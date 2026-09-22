@@ -2,219 +2,122 @@
 import { Icon } from "astro-icon/components";
 ---
 
-<header class="ucla-header ucla-header--college">
-  <div class="ucla-header__logo-container">
-    <div class="ucla-header__logo">
-      <a href="/">
-        <img
-          class="ucla-header__logo-image"
-          src="/images/care.png"
-          alt="care"
-        />
+<header class="nhsuk-header" data-module="nhsuk-header" role="banner">
+  <div class="nhsuk-header__container nhsuk-width-container">
+    <div class="nhsuk-header__service">
+      <a
+        class="nhsuk-header__service-logo"
+        href="#"
+        aria-label="NHS Digital service manual homepage"
+      >
+        <svg
+          class="nhsuk-header__logo"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 200 80"
+          height="40"
+          width="100"
+          focusable="false"
+          role="img"
+          aria-label="NHS"
+        >
+          <title>NHS</title>
+          <path
+            fill="currentcolor"
+            d="M200 0v80H0V0h200Zm-27.5 5.5c-14.5 0-29 5-29 22 0 10.2 7.7 13.5 14.7 16.3l.7.3c5.4 2 10.1 3.9 10.1 8.4 0 6.5-8.5 7.5-14 7.5s-12.5-1.5-16-3.5L135 70c5.5 2 13.5 3.5 20 3.5 15.5 0 32-4.5 32-22.5 0-19.5-25.5-16.5-25.5-25.5 0-5.5 5.5-6.5 12.5-6.5a35 35 0 0 1 14.5 3l4-13.5c-4.5-2-12-3-20-3Zm-131 2h-22l-14 65H22l9-45h.5l13.5 45h21.5l14-65H64l-9 45h-.5l-13-45Zm63 0h-18l-13 65h17l6-28H117l-5.5 28H129l13.5-65H125L119.5 32h-20l5-24.5Z"
+          ></path>
+        </svg>
+        <span class="nhsuk-header__service-name">Digital service manual</span>
       </a>
     </div>
-  </div>
-  <div class="ucla-header__container" id="header-wrap">
-    <div class="ucla-header__site-name">
-      <a href="/" title="mcenahle.care" rel="home">mcenahle.care</a>
-    </div>
-    <nav id="nav-second" class="ucla-secondary-nav" aria-label="Secondary Menu">
-      <ul class="ucla-secondary-nav__list">
-        <li class="ucla-secondary-nav__item">
-          <a
-            class="ucla-secondary-nav__link"
-            href="https://donate-blood.mcenahle.care"
-            target="_blank"><Icon name="mdi:hand-heart" /> 献血</a
-          >
-        </li>
-        <li class="ucla-secondary-nav__item">
-          <a
-            class="ucla-secondary-nav__link"
-            href="https://mail.mcenahle.care"
-            target="_blank">webmail <Icon name="mdi:open-in-new" /></a
-          >
-        </li>
-        <li class="ucla-secondary-nav__item">
-          <a
-            class="ucla-secondary-nav__link ucla-secondary-nav__link--active"
-            href="https://mcenahle.dev/gh/care/"
-            target="_blank"
-          >
-            <Icon name="mdi:github" /> 查看本网站的 GitHub 源代码
-          </a>
-        </li>
-      </ul>
-    </nav>
-    <button
-      id="primary-ham"
-      class="hamburger"
-      type="button"
-      aria-controls="nav-main"
-      aria-expanded="false"
-      alt="navigation and search"
-    >
-      <span class="hamburger__box">
-        <span class="hamburger__inner"></span>
-      </span>
-    </button>
-    <nav
-      aria-labelledby="primary-ham"
-      id="nav-main"
-      class="ucla-main-nav"
-      aria-label="Main Menu"
-    >
-      <ul
-        class="ucla-main-nav__list"
-        role="menubar"
-        data-menubar-item-expanded="true"
+    <search class="nhsuk-header__search">
+      <form
+        class="nhsuk-header__search-form"
+        id="search"
+        action="https://www.nhs.uk/search/"
+        method="get"
+        novalidate
       >
-        <li
-          class="ucla-main-nav__item ucla-main-nav__item--has-children"
-          aria-haspopup="true"
-        >
-          <a class="ucla-main-nav__link" href="javascript:void(0)"
-            ><Icon name="mdi:heart-multiple" /> 感兴趣的学科</a
-          >
-          <button
-            class="ucla-main-nav__toggle"
-            aria-expanded="false"
-            aria-label="toggle"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              xml:space="preserve"
-              viewBox="12 17.2 24 14.8"
-              ><title>Arrow Down</title><path
-                class="down-arrow--blue"
-                d="m14.8 17.2 9.2 9.2 9.2-9.2L36 20 24 32 12 20l2.8-2.8z"
-              ></path></svg
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label nhsuk-u-visually-hidden" for="search-field">
+            Search the NHS digital service manual
+          </label>
+          <div class="nhsuk-input-wrapper">
+            <input
+              class="nhsuk-input"
+              id="search-field"
+              name="q"
+              type="search"
+              autocomplete="off"
+              placeholder="Search"
+            />
+            <button
+              class="nhsuk-button nhsuk-button--icon nhsuk-button--small"
+              data-module="nhsuk-button"
+              type="submit"
+              aria-label="Search"
             >
-          </button>
-          <ul class="ucla-main-nav__sublist">
-            <li class="ucla-main-nav__item">
-              <a class="ucla-main-nav__link" href="/nursing/">护理学</a>
-            </li>
-            <li class="ucla-main-nav__item">
-              <a class="ucla-main-nav__link" href="/obgyn/">妇产科学</a>
-            </li>
-          </ul>
-        </li>
-        <li class="ucla-main-nav__item">
-          <a class="ucla-main-nav__link" href="/posts/"
-            ><Icon name="mdi:post-it-note-check-outline" /> 医学相关文章</a
-          >
-        </li>
-        <li class="ucla-main-nav__item">
-          <a class="ucla-main-nav__link" href="/papers/"
-            ><Icon name="mdi:book-education" /> 医学论文</a
-          >
-        </li>
-        <li class="ucla-main-nav__item">
-          <a class="ucla-main-nav__link" href="/thoughts/"
-            ><Icon name="mdi:notebook-edit" /> 见闻</a
-          >
-        </li>
-      </ul>
-
-      <ul class="ucla-secondary-nav__list">
-        <li class="ucla-secondary-nav__item">
-          <a
-            class="ucla-secondary-nav__link"
-            href="https://donate-blood.mcenahle.care"
-            target="_blank"><Icon name="mdi:hand-heart" /> 献血</a
-          >
-        </li>
-        <li class="ucla-secondary-nav__item">
-          <a
-            class="ucla-secondary-nav__link"
-            href="https://mail.mcenahle.care"
-            target="_blank">webmail <Icon name="mdi:open-in-new" /></a
-          >
-        </li>
-        <li class="ucla-secondary-nav__item">
-          <a
-            class="ucla-secondary-nav__link ucla-secondary-nav__link--active"
-            href="https://mcenahle.dev/gh/care/"
-            target="_blank"
-            ><Icon name="mdi:github" /> 查看本网站的 GitHub 源代码</a
-          >
-        </li>
-      </ul>
-
-      <div class="ucla-main-nav__search-desktop" id="primary-nav-search">
-        <button
-          id="search-button"
-          aria-expanded="false"
-          class="ucla-main-nav__search-desktop-button"
-        >
-          <svg
-            role="img"
-            aria-label="Search Icon"
-            class="ucla-main-nav__search-icon"
-            width="18px"
-            height="18px"
-            viewBox="0 0 18 18"
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-          >
-            <title>Search Icon</title>
-            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-              <g transform="translate(-15.000000, -15.000000)">
-                <g id="Nav-Item">
-                  <g transform="translate(12.000000, 12.000000)">
-                    <polygon class="Path-polygon" points="0 0 24 0 24 24 0 24"
-                    ></polygon>
-                    <path
-                      d="M15.5,14 L14.71,14 L14.43,13.73 C15.41,12.59 16,11.11 16,9.5 C16,5.91 13.09,3 9.5,3 C5.91,3 3,5.91 3,9.5 C3,13.09 5.91,16 9.5,16 C11.11,16 12.59,15.41 13.73,14.43 L14,14.71 L14,15.5 L19,20.49 L20.49,19 L15.5,14 Z M9.5,14 C7.01,14 5,11.99 5,9.5 C5,7.01 7.01,5 9.5,5 C11.99,5 14,7.01 14,9.5 C14,11.99 11.99,14 9.5,14 Z"
-                      fill="#00598C"
-                      fill-rule="evenodd"></path>
-                  </g>
-                </g>
-              </g>
-            </g>
-          </svg>
-          <svg
-            class="ucla-main-nav__search-close"
-            xmlns="http://www.w3.org/2000/svg"
-            width="18px"
-            height="18px"
-            xml:space="preserve"
-            viewBox="10 10 28 28"
-            ><title>Close</title><path
-              d="M38 12.8 35.2 10 24 21.2 12.8 10 10 12.8 21.2 24 10 35.2l2.8 2.8L24 26.8 35.2 38l2.8-2.8L26.8 24 38 12.8z"
-              fill="#ffffff"
-              fill-rule="evenodd"></path></svg
-          >
-        </button>
-        <div
-          class="ucla-main-nav__search-block-form"
-          id="block-search"
-          role="search"
-        >
-          <form
-            role="search"
-            method="get"
-            class="ucla-main-nav__search-form"
-            action="#"
-            id="menu-search-desktop"
-          >
-            <label>
-              <span class="ucla-main-nav__screen-reader-text visuallyhidden"
-                >Search for:</span
+              <svg
+                class="nhsuk-icon nhsuk-icon--search"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="16"
+                height="16"
+                focusable="false"
+                aria-hidden="true"
               >
-              <input
-                type="search"
-                class="ucla-main-nav__search-field"
-                placeholder="搜索..."
-                value=""
-                name="s"
-              />
-            </label>
-            <button class="ucla-btn ucla-btn--primary" disabled>搜索</button>
-          </form>
+                <path
+                  d="m20.7 18.9-4.1-4.1a7 7 0 1 0-1.4 1.4l4 4.1a1 1 0 0 0 1.5 0c.4-.4.4-1 0-1.4ZM6 10.6a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z"
+                ></path>
+              </svg>
+            </button>
+          </div>
         </div>
-      </div>
-    </nav>
+      </form>
+    </search>
   </div>
+  <nav class="nhsuk-header__navigation" aria-label="Menu">
+    <div class="nhsuk-header__navigation-container nhsuk-width-container">
+      <ul class="nhsuk-header__navigation-list">
+        <li class="nhsuk-header__navigation-item">
+          <a class="nhsuk-header__navigation-link" href="#">Health A to Z</a>
+        </li>
+        <li class="nhsuk-header__navigation-item">
+          <a class="nhsuk-header__navigation-link" href="#">Live Well</a>
+        </li>
+        <li class="nhsuk-header__navigation-item">
+          <a class="nhsuk-header__navigation-link" href="#">Mental health</a>
+        </li>
+        <li class="nhsuk-header__navigation-item">
+          <a class="nhsuk-header__navigation-link" href="#">Care and support</a>
+        </li>
+        <li
+          class="nhsuk-header__navigation-item nhsuk-header__navigation-item--current"
+        >
+          <a class="nhsuk-header__navigation-link" href="#" aria-current="true"
+            ><strong class="nhsuk-header__navigation-item-current-fallback"
+              >Pregnancy</strong
+            ></a
+          >
+        </li>
+        <li class="nhsuk-header__navigation-item">
+          <a class="nhsuk-header__navigation-link" href="#">NHS services</a>
+        </li>
+        <li class="nhsuk-header__navigation-item">
+          <a class="nhsuk-header__navigation-link" href="#">Another item #1</a>
+        </li>
+        <li class="nhsuk-header__navigation-item">
+          <a class="nhsuk-header__navigation-link" href="#">Another item #2</a>
+        </li>
+        <li class="nhsuk-header__menu" hidden>
+          <button
+            class="nhsuk-header__menu-toggle nhsuk-header__navigation-link"
+            id="toggle-menu"
+            aria-expanded="false"
+          >
+            <span class="nhsuk-u-visually-hidden">Browse </span>More
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
 </header>

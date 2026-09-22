@@ -4,8 +4,6 @@ import { Icon } from "astro-icon/components";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 
-import "ucla-design-systems/build/css/ucla-lib.min.css";
-
 const { title } = Astro.props;
 ---
 
@@ -16,6 +14,7 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
+    <link rel="stylesheet" href="/css/nhsuk-frontend.min.css" />
     <title>{title ? `${title} | mcenahle.care` : "mcenahle.care"}</title>
   </head>
   <body>
@@ -25,8 +24,16 @@ const { title } = Astro.props;
   </body>
 
   <script>
-    import { Navigation } from "ucla-design-systems/build/js/ucla-lib-scripts.esm.js";
+    document.body.className +=
+      " js-enabled" +
+      ("noModule" in HTMLScriptElement.prototype
+        ? " nhsuk-frontend-supported"
+        : "");
+  </script>
 
-    Navigation.initAll();
+  <script is:inline type="module" src="/js/nhsuk-frontend.min.js"></script>
+  <script is:inline type="module">
+    import { initAll } from "/js/nhsuk-frontend.min.js";
+    initAll();
   </script>
 </html>
