@@ -47,24 +47,25 @@ const { frontmatter } = Astro.props;
       <slot />
     </div>
 
-    <a
-      href="/"
-      class="nhsuk-button nhsuk-button--login nhsuk-button--small"
-      data-module="nhsuk-button"
-      type="submit"
-    >
-      <Icon name="mdi:arrow-left" /> 返回首页
-    </a>
+    <div class="nhsuk-button-group">
+      <a
+        href="/"
+        class="nhsuk-button nhsuk-button--login nhsuk-button--small"
+        data-module="nhsuk-button"
+        type="submit"
+      >
+        <Icon name="mdi:arrow-left" /> 返回首页
+      </a>
 
-    <button
-      id="ask-gpt"
-      class="nhsuk-button nhsuk-button--reverse nhsuk-button--small"
-      data-module="nhsuk-button"
-      type="submit"
-      style="margin-left: 6px;"
-    >
-      <Icon name="bi:openai" /> 询问 ChatGPT <ExternalLinkIcon />
-    </button>
+      <button
+        id="ask-gpt"
+        class="nhsuk-button nhsuk-button--reverse nhsuk-button--small"
+        data-module="nhsuk-button"
+        type="submit"
+      >
+        <Icon name="bi:openai" /> 询问 ChatGPT <ExternalLinkIcon />
+      </button>
+    </div>
 
     <script>
       document.querySelector("#ask-gpt")?.addEventListener("click", () => {
