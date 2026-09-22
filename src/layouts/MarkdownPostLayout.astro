@@ -1,26 +1,30 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
+import ExternalLinkIcon from "../components/ExternalLinkIcon.astro";
 const { frontmatter } = Astro.props;
 ---
 
 <meta charset="utf-8" />
 <Layout title={frontmatter.title}>
   <div class="container">
-    <nav class="ucla-breadcrumb">
-      <ul class="ucla-breadcrumb__list">
-        <li class="ucla-breadcrumb__list-item" style="margin-top: 0px;">
-          <a class="ucla-breadcrumb__link" href="/">首页</a>
+    <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+      <ol class="nhsuk-breadcrumb__list">
+        <li class="nhsuk-breadcrumb__list-item" style="margin-top: 0px;">
+          <a class="nhsuk-breadcrumb__link" href="/"> 首页 </a>
         </li>
-        <li class="ucla-breadcrumb__list-item">
-          <a class="ucla-breadcrumb__link" href="/posts/">医学相关文章</a>
+        <li class="nhsuk-breadcrumb__list-item">
+          <a class="nhsuk-breadcrumb__link" href="/posts/"> 医学相关文章 </a>
         </li>
-        <li class="ucla-breadcrumb__list-item">
-          <a class="ucla-breadcrumb__link" href="javascript:void(0)"
-            >{frontmatter.title}</a
-          >
+        <li class="nhsuk-breadcrumb__list-item">
+          <a class="nhsuk-breadcrumb__link" href="javascript:void(0)">
+            {frontmatter.title}
+          </a>
         </li>
-      </ul>
+      </ol>
+      <a class="nhsuk-back-link" href="/posts/">
+        <span class="nhsuk-u-visually-hidden">回到 </span>医学相关文章
+      </a>
     </nav>
 
     <h2 style="text-align: center; font-size: 30px; margin-top: 30px;">
@@ -43,33 +47,39 @@ const { frontmatter } = Astro.props;
       <slot />
     </div>
 
-    <a href="/" class="ucla-btn ucla-btn--primary ucla-btn--icon-lead">
-      <Icon name="mdi:arrow-left" /> 返回首页</a
+    <a
+      href="/"
+      class="nhsuk-button nhsuk-button--login nhsuk-button--small"
+      data-module="nhsuk-button"
+      type="submit"
     >
+      <Icon name="mdi:arrow-left" /> 返回首页
+    </a>
 
     <button
       id="ask-gpt"
-      type="button"
-      class="ucla-btn ucla-btn--secondary ucla-btn--icon-lead"
+      class="nhsuk-button nhsuk-button--reverse nhsuk-button--small"
+      data-module="nhsuk-button"
+      type="submit"
       style="margin-left: 6px;"
     >
-      <Icon name="bi:openai" /> 询问 ChatGPT</button
-    >
+      <Icon name="bi:openai" /> 询问 ChatGPT <ExternalLinkIcon />
+    </button>
+
+    <script>
+      document.querySelector("#ask-gpt")?.addEventListener("click", () => {
+        const pageUrl = window.location.href;
+        const prompt = `阅读 ${pageUrl}，然后回答这个问题：`;
+        const url = `https://chatgpt.com/?prompt=${encodeURIComponent(prompt)}`;
+
+        window.open(url, "_blank");
+      });
+    </script>
+
+    <style is:global>
+      .posts > .usa-table {
+        font-family: "MN Source Han Serif SC", serif;
+      }
+    </style>
   </div>
-
-  <script>
-    document.querySelector("#ask-gpt")?.addEventListener("click", () => {
-      const pageUrl = window.location.href;
-      const prompt = `阅读 ${pageUrl}，然后回答这个问题：`;
-      const url = `https://chatgpt.com/?prompt=${encodeURIComponent(prompt)}`;
-
-      window.open(url, "_blank");
-    });
-  </script>
-
-  <style is:global>
-    .posts > .usa-table {
-      font-family: "MN Source Han Serif SC", serif;
-    }
-  </style>
 </Layout>
