@@ -223,3 +223,16 @@ a:hover,
   // text-decoration-color: transparent !important;
   // text-decoration-style: none !important;
 }
+
+.nhsuk-inset-text {
+  max-width: 100%;
+}
+
+.repositive-img {
+  max-width: 100%;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4px auto;
+}
