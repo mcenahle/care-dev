@@ -213,6 +213,11 @@ a:hover,
   color: #005eb8 !important;
 }
 
+.nhsuk-button:not(.nhsuk-button--reverse):hover,
+.nhsuk-button--login:hover {
+  color: #5ac2de !important;
+}
+
 .nhsuk-header__navigation-link:hover {
   color: #5da9e0 !important;
 }
